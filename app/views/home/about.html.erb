@@ -1,2 +1,26 @@
-<h1>Home#about</h1>
-<p>Find me in app/views/home/about.html.erb</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Wallet Watcher</h1>
+    <p>Want to save up for those big moments in your life?</p>
+    <p>Look no further! You've come to the right place</p>
+    <p>
+      <%= link_to "Sign In", new_user_session_path %> or
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Link your bank account</h2>
+      <p>Your spending will automatically be transferred and tracked without the hassle of inputting your expenses.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Create a budget and set goals</h2>
+      <p>We'll help keep you on track so you can achieve financial success.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>End of Month statements</h2>
+      <p>Crucial data such as categorical spending, net savings, and ways to better your goals next month.</p>
+    </div>
+  </div>
+</div>
