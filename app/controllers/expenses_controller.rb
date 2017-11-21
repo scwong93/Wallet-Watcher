@@ -1,4 +1,12 @@
 class ExpensesController < ApplicationController
+  def index
+    @expenses = Expense.all
+  end
+
+  def show
+    @expense = Expense.find(params[:id])
+  end
+
   def new
     @expense = Expense.new
   end
@@ -41,5 +49,5 @@ class ExpensesController < ApplicationController
       flash.now[:alert] = "There was an error. Please try again."
       redirect_to index_path
     end
-  end 
+  end
 end

@@ -22,7 +22,7 @@ table, th, td {
 }
 
 td, th {
-  padding: 15px;
+  padding: 10px;
 }
 
 th {
@@ -36,22 +36,30 @@ table {
 
 #date {
   background-color: yellow;
+  font-size: 20px;
 }
 
 #cat {
   background-color: orange;
+  font-size: 20px;
 }
 
 #desc {
   background-color: lime;
+  font-size: 20px;
 }
 
 #amt {
   background-color: magenta;
+  font-size: 20px;
 }
 
 button {
   float: right;
   margin-top: 20px;
   margin-right: 50px;
+}
+
+.expense-btn {
+  padding: 15px;
 }
