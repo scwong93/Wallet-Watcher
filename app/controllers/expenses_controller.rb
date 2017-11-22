@@ -20,7 +20,7 @@ class ExpensesController < ApplicationController
 
     if @expense.save
       flash[:notice] = "Expense added."
-      redirect_to index_path
+      redirect_to expenses_path
     else
       flash.now[:alert] = "There was an error. Please try again."
       render :new

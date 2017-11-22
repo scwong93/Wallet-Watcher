@@ -1,18 +1,29 @@
-<h1>Monthly Expenses<h1>
+<div class="jumbotron">
+  <div id='spendingBar' class="col-md-4">
+    <p>You've spent</p>
+    <h2>$$$ (actual) of $$$ (budget)</h2>
+  </div>
+  <div id='spendingBar' class="col-md-4">
+    <p>It is day</p>
+    <h2>12 of 30</h2>
+  </div>
+  <div id='spendingBar' class="col-md-4">
+    <p>Remaining balance</p>
+    <h2>$$$</h2>
+  </div>
+</div>
 
 
 <div class="expense-btn">
-  <div class="col-md-4">
-    <%= link_to "Add Expense", new_expense_path, class: 'btn btn-success' %>
-  </div>
+  <%= link_to "Add Expense", new_expense_path, class: 'btn btn-info' %>
 </div>
 
 <table style="width:80%">
   <tr>
-    <th id='date'>Date</th>
-    <th id='cat'>Category</th>
-    <th id='desc'>Description</th>
-    <th id='amt'>Amount</th>
+    <th class='date'>Date</th>
+    <th class='cat'>Category</th>
+    <th class='desc'>Description</th>
+    <th class='amt'>Amount</th>
   </tr>
   <% @expenses.each do |expense| %>
     <tr>

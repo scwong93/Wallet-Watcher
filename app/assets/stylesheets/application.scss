@@ -34,23 +34,23 @@ table {
   margin-right: auto;
 }
 
-#date {
+.date {
   background-color: yellow;
   font-size: 20px;
 }
 
-#cat {
+.cat {
   background-color: orange;
   font-size: 20px;
 }
 
-#desc {
-  background-color: lime;
+.desc {
+  background-color: lightpink;
   font-size: 20px;
 }
 
-#amt {
-  background-color: magenta;
+.amt {
+  background-color: lightblue;
   font-size: 20px;
 }
 
@@ -62,4 +62,20 @@ button {
 
 .expense-btn {
   padding: 15px;
+  display: inline-block;
+  position: relative;
+  margin-left: 200px;
+}
+
+.jumbotron {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: lightgreen;
+}
+
+#spendingBar {
+  text-align: center;
+  border: 1px solid black;
 }
