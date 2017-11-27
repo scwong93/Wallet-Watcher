@@ -16,8 +16,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new
-
+    @expense = Expense.new(expense_params)
     if @expense.save
       flash[:notice] = "Expense added."
       redirect_to expenses_path
@@ -44,10 +43,16 @@ class ExpensesController < ApplicationController
 
     if @expense.destroy
       flash[:notice] = "Expense deleted."
-      redirect_to index_path
+      redirect_to expense_path
     else
       flash.now[:alert] = "There was an error. Please try again."
-      redirect_to index_path
+      redirect_to expense_path
     end
   end
+end
+
+private
+
+def expense_params
+  params.require(:expense).permit(:date, :category, :description, :amount)
 end

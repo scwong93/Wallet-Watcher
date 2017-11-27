@@ -1,36 +1,42 @@
-<div class="jumbotron">
-  <div id='spendingBar' class="col-md-4">
-    <p>You've spent</p>
-    <h2>$$$ (actual) of $$$ (budget)</h2>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div id='spendingBar' class="col-md-4">
+        <p>You've spent</p>
+        <h2>$ (actual) of $ (budget)</h2>
+      </div>
+      <div id='spendingBar' class="col-md-4">
+        <p>It is day</p>
+        <h2>12 of 30</h2>
+      </div>
+      <div id='spendingBar' class="col-md-4">
+        <p>Remaining balance</p>
+        <h2>$$$</h2>
+      </div>
+    </div>
   </div>
-  <div id='spendingBar' class="col-md-4">
-    <p>It is day</p>
-    <h2>12 of 30</h2>
+
+  <div class="expense-btn">
+    <%= link_to "Add Expense", new_expense_path, class: 'btn btn-info' %>
   </div>
-  <div id='spendingBar' class="col-md-4">
-    <p>Remaining balance</p>
-    <h2>$$$</h2>
-  </div>
-</div>
 
-
-<div class="expense-btn">
-  <%= link_to "Add Expense", new_expense_path, class: 'btn btn-info' %>
-</div>
-
-<table style="width:80%">
-  <tr>
-    <th class='date'>Date</th>
-    <th class='cat'>Category</th>
-    <th class='desc'>Description</th>
-    <th class='amt'>Amount</th>
-  </tr>
-  <% @expenses.each do |expense| %>
+  <table style="width:80%">
     <tr>
-      <td><%= expense.date %></td>
-      <td><%= expense.category %></td>
-      <td><%= expense.description %></td>
-      <td><%= expense.amount %></td>
+      <th class='date'>Date</th>
+      <th class='cat'>Category</th>
+      <th class='desc'>Description</th>
+      <th class='amt'>Amount</th>
+      <th class='edit'>Edit</th>
     </tr>
-  <% end %>
-</table>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.date %></td>
+        <td><%= expense.category %></td>
+        <td><%= expense.description %></td>
+        <td><%= expense.amount %></td>
+        <td><%= link_to "Edit Expense", edit_expense_path(expense), class: 'btn btn-danger' %>
+            <%= link_to "Delete Expense", expense, method: :delete, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
