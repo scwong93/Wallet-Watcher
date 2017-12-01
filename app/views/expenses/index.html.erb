@@ -3,7 +3,7 @@
     <div class="row">
       <div id='spendingBar' class="col-md-4">
         <p>You've spent</p>
-        <h2>$ (actual) of $ (budget)</h2>
+        <h2><%= @expenses.map(&:amount).sum %> of [Budget]</h2>
       </div>
       <div id='spendingBar' class="col-md-4">
         <p>It is day</p>
@@ -30,7 +30,7 @@
     </tr>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.date %></td>
+        <td><%= expense.date.strftime("%m/%d/%Y")%></td>
         <td><%= expense.category %></td>
         <td><%= expense.description %></td>
         <td><%= expense.amount %></td>
