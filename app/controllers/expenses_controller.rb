@@ -29,7 +29,7 @@ class ExpensesController < ApplicationController
   def update
     @expense = Expense.find(params[:id])
 
-    if @expense.save
+    if @expense.update(expense_params)
       flash[:notice] = "Expense updated."
       redirect_to index_path
     else

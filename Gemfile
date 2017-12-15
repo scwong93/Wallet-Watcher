@@ -55,3 +55,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 
 gem 'gruff'
+
+gem 'best_in_place', '~> 3.0.1'
+
+gem 'jquery-rails'
