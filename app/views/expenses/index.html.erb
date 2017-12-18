@@ -3,7 +3,7 @@
     <div class="row">
       <div id='spendingBar' class="col-md-4">
         <p>You've spent</p>
-        <h2><%= @expenses.map(&:amount).sum %> of <%= @budget %></h2>
+        <h2><%= @expenses.map(&:amount).sum %> of <%= best_in_place Budget.last, :amount, as: :input %></h2>
       </div>
       <div id='spendingBar' class="col-md-4">
         <p>Day</p>
@@ -11,14 +11,13 @@
       </div>
       <div id='spendingBar' class="col-md-4">
         <p>Remaining balance</p>
-        <h2>[Budget - Actual]</h2>
+        <h2><%= Budget.last.amount - @expenses.map(&:amount).sum %></h2>
       </div>
     </div>
   </div>
 
   <div class="expense-btn">
     <%= link_to "Add Expense", new_expense_path, class: 'btn btn-info' %>
-    <%= link_to "Add Budget", new_budget_path, class: 'btn btn-info' %>
   </div>
 
   <table style="width:80%">
@@ -34,9 +33,9 @@
         <td><%= expense.date.strftime("%m/%d/%Y")%></td>
         <td><%= expense.category %></td>
         <td><%= expense.description %></td>
-        <td><%= best_in_place expense, :amount, as: :input %></td>
-        <td><%= link_to "Edit Expense", edit_expense_path(expense), class: 'btn btn-danger' %>
-            <%= link_to "Delete Expense", expense, method: :delete, class: 'btn btn-danger' %></td>
+        <td><%= expense.amount %></td>
+        <td><%= link_to "Edit", edit_expense_path(expense), class: 'btn btn-danger' %>
+            <%= link_to "Delete", expense, method: :delete, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </table>

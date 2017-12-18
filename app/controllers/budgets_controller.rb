@@ -15,8 +15,10 @@ class BudgetsController < ApplicationController
     @budget = Budget.new(budget_params)
     if @budget.save
       flash[:notice] = "Budget saved."
+      redirect_to expenses_path
     else
       flash.now[:alert] = "There was an error. Please try again."
+      render :new
     end
   end
 
@@ -25,8 +27,10 @@ class BudgetsController < ApplicationController
 
     if @budget.update(budget_params)
       flash[:notice] = "Budget updated."
+      redirect_to expenses_path
     else
       flash.now[:alert] = "There was an error. Please try again."
+      render :new
     end
   end
 end

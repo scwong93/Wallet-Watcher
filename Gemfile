@@ -59,3 +59,5 @@ gem 'gruff'
 gem 'best_in_place', '~> 3.0.1'
 
 gem 'jquery-rails'
+
+gem 'pry-rails'
